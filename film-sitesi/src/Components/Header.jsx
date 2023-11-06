@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
-      <div className="header flex justify-between bg-blue-950 text-white w-full h-12 text-center py-3 px-36  ">
+      <div className="header flex justify-between bg-blue-950 text-white mx-0 w-full h-12 text-center py-3 px-36 mb-5  ">
         <Link to={"/watchlist"} className="izlenecek ">
           İzlenecekler
         </Link>
