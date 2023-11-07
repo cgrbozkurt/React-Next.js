@@ -17,12 +17,12 @@ function App() {
   return (
     <>
     <Router>
-    <Header query={query} setQuery={setQuery} />
+    <Header  />
 <Routes>
   <Route path='/' Component={HomePage}/>
   <Route path='watchlist' Component={WatchList}/>
   <Route path='watched' Component={Watched}/>
-  <Route path='add' Component={Add} query={query} setQuery={setQuery} />
+  <Route path='add' Component={Add}  />
 
   
 </Routes>
