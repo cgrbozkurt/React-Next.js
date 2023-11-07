@@ -8,17 +8,21 @@ import Add from './Components/Add';
 import "./lib/fontawesome/css/all.min.css";
 
 
+
 function App() {
+
+
+
 
   return (
     <>
     <Router>
-    <Header/>
+    <Header query={query} setQuery={setQuery} />
 <Routes>
   <Route path='/' Component={HomePage}/>
   <Route path='watchlist' Component={WatchList}/>
   <Route path='watched' Component={Watched}/>
-  <Route path='add' Component={Add}/>
+  <Route path='add' Component={Add} query={query} setQuery={setQuery} />
 
   
 </Routes>
