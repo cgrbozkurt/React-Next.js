@@ -6,6 +6,7 @@ import WatchList from './Components/WatchList';
 import Watched from './Components/Watched';
 import Add from './Components/Add';
 import "./lib/fontawesome/css/all.min.css";
+import { AnaSarmalayici } from './Contex/GlobalState';
 
 
 
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <>
+    <AnaSarmalayici>
     <Router>
     <Header  />
 <Routes>
@@ -27,6 +29,7 @@ function App() {
   
 </Routes>
     </Router>
+    </AnaSarmalayici>
     </>
   )
 }

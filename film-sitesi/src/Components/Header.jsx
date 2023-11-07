@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="header flex justify-between  text-white mt-8
+      <div className="header flex justify-between  text-white mt-8 
        w-full h-12 text-center py-3 px-36 mb-5 fixed backdrop-blur-3xl opacity-90 bg-gradient-to-b  ">
         <Link to={"/watchlist"} className="izlenecek ">
           İzlenecekler

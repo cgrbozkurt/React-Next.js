@@ -37,7 +37,7 @@ const Add = () => {
 
     <div className="container">
       <div className="add-content -mt-5 w-[80%] h-2 mx-auto">
-        <img
+        <img className="rounded-b-lg"
           src="https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,00192f,00baff)/ctMserH8g2SeOAnCw5gFjdQF8mo.jpg"
           alt=""
         />
@@ -63,7 +63,7 @@ const Add = () => {
       </div>
     
     </div>
-    <div className="results w-[80%] flex flex-wrap justify-between bg-gray-100 mx-auto mt-64 p-4 rounded-lg gap-5 ">
+    <div className="results w-[80%] flex flex-wrap justify-start bg-orange-300 mx-auto mt-64 p-4 rounded-lg gap-5 ">
       {results.length > 0 ? (
         results.map((product) => (
           <ProductItem product={product} key={product.id} />
