@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import  { createContext, useReducer } from "react";
 import AppReducer from "./AppReducer";
 
@@ -11,9 +12,18 @@ const initialState = {
 // Provider component
 export const AnaSarmalayici = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
-console.log(state);
+
+  const addToWatchlist=(movie)=>{
+    dispatch({type:"ADD_TO_WATCHLIST",payload:movie})
+
+  }
+  const addToWatched=(movie)=>{
+    dispatch({type:"ADD_TO_WATCHED",payload:movie})
+  }
+
+
   return (
-    <GlobalContext.Provider value={{ state, dispatch }}>
+    <GlobalContext.Provider value={{ addToWatchlist, addToWatched,watchList:state.watchList,watched:state.watched }}>
       {children}
     </GlobalContext.Provider>
   );

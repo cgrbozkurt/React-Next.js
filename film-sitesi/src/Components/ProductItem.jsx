@@ -1,4 +1,12 @@
+/* eslint-disable react/prop-types */
+import { useContext } from "react";
+import { GlobalContext } from "./Contex/GlobalState";
+
 const ProductItem = ({ product }) => {
+
+const {addToWatchlist}=useContext(GlobalContext);
+const {addToWatched}=useContext(GlobalContext);
+
     return (
      <>
       <div className="container w-64 max-w-sm h-[500px] rounded overflow-hidden shadow-lg flex flex-col bg-gray-200 justify-between  ">
@@ -23,10 +31,10 @@ const ProductItem = ({ product }) => {
             ? `Ortalama Oy: ${product.vote_average.toFixed(1)}`
             : "Oylanmamış"}
         </p>      
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold bottom-2 py-2 px-4 rounded-full">
+        <button onClick={()=>addToWatchlist(product)}  className="bg-blue-500 hover:bg-blue-700 text-white font-bold bottom-2 py-2 px-4 rounded-full">
   Add To Watchlist
 </button>
-        <button className="bg-green-500 hover:bg-blue-700 text-white font-bold bottom-2 py-2 px-4 rounded-full">
+        <button onClick={()=>addToWatched(product)} className="bg-green-500 hover:bg-blue-700 text-white font-bold bottom-2 py-2 px-4 rounded-full">
   Add To Watched
 </button>
         </div>

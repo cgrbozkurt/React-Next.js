@@ -1,8 +1,19 @@
+import { useContext } from "react";
+import { GlobalContext } from "./Contex/GlobalState";
+import ProductItem from "./ProductItem";
 
 const Watched = () => {
-  return (
-    <div>Watched</div>
-  )
-}
+  const { watched } = useContext(GlobalContext);
 
-export default Watched
+  return (
+    <div>
+      <div className="watched">
+        {watched.map((product) => (
+          <ProductItem key={product.id} product={product} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Watched;
