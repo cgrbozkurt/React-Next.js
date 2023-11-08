@@ -3,12 +3,12 @@ export default (state, action) => {
       case "ADD_TO_WATCHLIST":
         return {
           ...state,
-          watchList: [...state.watchList, action.payload],
+          watchlist: [...state.watchlist, action.payload],
         };
       case "REMOVE_FROM_WATCHLIST":
         return {
           ...state,
-          watchList: state.watchList.filter((item) => item.id !== action.payload),
+          watchlist: state.watchlist.filter((item) => item.id !== action.payload),
         };
       case "ADD_TO_WATCHED":
         return {

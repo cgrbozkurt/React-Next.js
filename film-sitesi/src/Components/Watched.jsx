@@ -8,9 +8,9 @@ const Watched = () => {
   return (
     <div>
       <div className="watched">
-        {watched.map((product) => (
-          <ProductItem key={product.id} product={product} />
-        ))}
+      {watched.map((product) => (
+            <ProductItem key={product.id} product={product} />
+          ))}
       </div>
     </div>
   );
