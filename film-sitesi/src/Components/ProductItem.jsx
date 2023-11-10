@@ -6,6 +6,7 @@ const ProductItem = ({ product }) => {
 
 const {addToWatchlist}=useContext(GlobalContext);
 const {addToWatched}=useContext(GlobalContext);
+const {removeWatchlist}=useContext(GlobalContext);
 
     return (
      <>
@@ -38,6 +39,8 @@ const {addToWatched}=useContext(GlobalContext);
   Add To Watched
 </button>
         </div>
+        <button onClick={()=>removeWatchlist(product.id)} >sil</button>
+        <button>izlendi</button>
 
       </>
     );

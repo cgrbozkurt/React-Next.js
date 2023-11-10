@@ -3,8 +3,7 @@ import { GlobalContext } from "./Contex/GlobalState";
 import ProductItem from "./ProductItem";
 
 const Watchlist = () => {
-  const { watchlist } = useContext(GlobalContext);
-
+  const { watchlist, } = useContext(GlobalContext);
   return (
     <>
         

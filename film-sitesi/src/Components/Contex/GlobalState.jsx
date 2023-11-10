@@ -36,8 +36,16 @@ export const AnaSarmalayici = ({ children }) => {
   }
 
 
+  const removeWatchlist=(id)=>{
+    dispatch({type:"REMOVE_FROM_WATCHLIST",payload:id})
+  }
+
+  const removeWatched=(id)=>{
+    dispatch({type:"REMOVE_FROM_WATCHED",payload:id})
+  }
+
   return (
-    <GlobalContext.Provider value={{ addToWatchlist, addToWatched ,watchlist:state.watchlist, watched:state.watched }}>
+    <GlobalContext.Provider value={{ addToWatchlist, addToWatched , removeWatchlist,removeWatched, watchlist:state.watchlist, watched:state.watched }}>
       {children}
     </GlobalContext.Provider>
   );
