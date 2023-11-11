@@ -6,7 +6,7 @@ const ProductItem = ({ product }) => {
 
 const {addToWatchlist}=useContext(GlobalContext);
 const {addToWatched}=useContext(GlobalContext);
-const {removeWatchlist}=useContext(GlobalContext);
+const {removeWatchlist,sendWatched}=useContext(GlobalContext);
 
     return (
      <>
@@ -38,9 +38,10 @@ const {removeWatchlist}=useContext(GlobalContext);
         <button onClick={()=>addToWatched(product)} className="bg-green-500 hover:bg-blue-700 text-white font-bold bottom-2 py-2 px-4 rounded-full">
   Add To Watched
 </button>
+<button onClick={()=>removeWatchlist(product.id)} >sil</button>
+        <button onClick={()=>sendWatched(product)}>izlendi</button>
         </div>
-        <button onClick={()=>removeWatchlist(product.id)} >sil</button>
-        <button>izlendi</button>
+       
 
       </>
     );

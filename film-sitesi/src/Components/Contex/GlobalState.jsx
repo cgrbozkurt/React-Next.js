@@ -27,12 +27,12 @@ export const AnaSarmalayici = ({ children }) => {
   localStorage.setItem("watchlist",JSON.stringify(state.watchlist))
   ,[state])
 
-  const addToWatchlist=(movie)=>{
-    dispatch({type:"ADD_TO_WATCHLIST",payload:movie})
+  const addToWatchlist=(product)=>{
+    dispatch({type:"ADD_TO_WATCHLIST",payload:product})
 
   }
-  const addToWatched=(movie)=>{
-    dispatch({type:"ADD_TO_WATCHED",payload:movie})
+  const addToWatched=(product)=>{
+    dispatch({type:"ADD_TO_WATCHED",payload:product})
   }
 
 
@@ -40,12 +40,12 @@ export const AnaSarmalayici = ({ children }) => {
     dispatch({type:"REMOVE_FROM_WATCHLIST",payload:id})
   }
 
-  const removeWatched=(id)=>{
-    dispatch({type:"REMOVE_FROM_WATCHED",payload:id})
+  const sendWatched=(product)=>{
+    dispatch({type:"REMOVE_FROM_WATCHED",payload:product})
   }
 
   return (
-    <GlobalContext.Provider value={{ addToWatchlist, addToWatched , removeWatchlist,removeWatched, watchlist:state.watchlist, watched:state.watched }}>
+    <GlobalContext.Provider value={{ addToWatchlist, addToWatched , removeWatchlist,sendWatched, watchlist:state.watchlist, watched:state.watched }}>
       {children}
     </GlobalContext.Provider>
   );

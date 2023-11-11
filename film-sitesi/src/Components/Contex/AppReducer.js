@@ -8,7 +8,7 @@ export default (state, action) => {
       case "REMOVE_FROM_WATCHLIST":
         return {
           ...state,
-          watchlist: state.watchlist.filter((movie) => movie.id !== action.payload),
+          watchlist: state.watchlist.filter((product) => product.id !== action.payload),
         };
       case "ADD_TO_WATCHED":
         return {
@@ -18,8 +18,9 @@ export default (state, action) => {
       case "REMOVE_FROM_WATCHED":
         return {
           ...state,
-          watched: state.watched.filter((movie) => movie.id !== action.payload),
-        };
+          watched: [...state.watched, action.payload],
+          watchlist: state.watchlist.filter((product) => product.id !== action.payload)
+                };
       default:
         return state;
     }

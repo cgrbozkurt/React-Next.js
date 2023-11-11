@@ -11,7 +11,7 @@ const Watchlist = () => {
 
           <div className="results w-[80%] flex flex-wrap justify-start bg-orange-300 mx-auto mt-12 p-4 rounded-lg gap-5 ">
           {watchlist.map((product) => (
-            <ProductItem key={product.id} product={product} />
+            <ProductItem key={product.title} product={product} />
           ))}
           </div>
         </div>
