@@ -35,34 +35,35 @@ const Header = () => {
 
   return (
     <>
-    <header>
-      <div className="img top-0 w-full relative">
-        <img
-          className="w-full"
-          src="https://vitalen-ersenozturk.netlify.app/static/media/cinemaSeats2.53f35828a30dddc1c879.png"
-          alt=""
-        />
-        <div className="absolute bottom-0 flex justify-between w-[93%] mb-7 mx-11 ">
-          <Card />
-          <div className="flex flex-col items-center justify-start">
-            <p className="text-white text-2xl">Welcome to the</p>
-            <p className="text-white text-2xl font-bold">
-              World of TV Series & Movies
-            </p>
+      <header>
+        <div className="img top-0 w-full relative">
+          <img
+            className="w-full"
+            src="https://vitalen-ersenozturk.netlify.app/static/media/cinemaSeats2.53f35828a30dddc1c879.png"
+            alt=""
+          />
+          <div className="absolute bottom-0 flex justify-between w-[93%] mb-7 mx-11 ">
+            <Card />
+            <div className="flex flex-col items-center justify-start">
+              <p className="text-white text-2xl">Welcome to the</p>
+              <p className="text-white text-2xl font-bold">
+                World of TV Series & Movies
+              </p>
+            </div>
+            <Card />
           </div>
-          <Card />
+        </div>
+      </header>
+
+      <div className="populer   mt-16">
+        <div className="">Populer Movies</div>
+        <div className="div absolute  grid grid-cols-4 gap-5">
+          {results.map((product) => (
+            <Card key={product.id} product={product} />
+          ))}
         </div>
       </div>
-    </header>
-
-<div className="populer  h-full">
-{results.map((product) => (
-  <Card key={product.id} product={product} />
-))}
-</div>
-
     </>
-
   );
 };
 
