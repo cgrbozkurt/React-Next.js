@@ -1,14 +1,18 @@
+import { Link } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
-const CardItem = ({ product,bg,gg }) => {
+const CardItem = ({ product,bg,gg,randomMovie }) => {
   // Eğer product değeri undefined ise, varsayılan bir değer atayabiliriz
   const { title = "No Title", vote_average = 0, poster_path = "" } = product || {};
-  
+    ""
   return (
     
-    <button className="card relative">
-      <div id="top" className={`point  w-[42%] ml-auto ${gg} ${bg} rounded-t-md h-8 flex justify-center text-center font-bold `}>
+    <Link to={"/details"} className="card relative">
+      {vote_average?(<div id="top" className={`point  w-[42%] ml-auto ${gg} ${bg} rounded-t-md h-8 flex justify-center text-center font-bold `}>
         {vote_average.toFixed(1)}/10
-      </div>
+      </div>):(<div id="top" className={`point  w-[42%] ml-auto ${gg} ${bg} rounded-t-md h-8 flex justify-center text-center font-bold `}>
+      Oylanmamış
+      </div>)}
       <div className="image rounded-b-md">
         {poster_path?(<img
           className="rounded-b-md"
@@ -24,7 +28,7 @@ const CardItem = ({ product,bg,gg }) => {
        text-white h-auto flex items-center justify-center rounded-b-md">
         {title}
       </div>
-    </button>
+    </Link>
   );
 };
 

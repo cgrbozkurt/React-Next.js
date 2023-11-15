@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
-import Card from "../Card/Card";
-import { API_KEY } from "./config";
+import { useEffect } from "react";
 import Movies from "./Movies";
 import Series from "./Series";
-
+import { setMovies } from "../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { API_KEY } from "./config";
+import CardItem from "../Card/Card";
 const Header = () => {
-  const [results, setResults] = useState([]);
-  const bg="bg-white text-black"
+  const bg = "bg-white text-black";
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -21,9 +23,7 @@ const Header = () => {
         const data = await response.json();
 
         if (data.results) {
-          setResults(data.results);
-        } else {
-          setResults([]);
+          dispatch(setMovies(data.results));
         }
       } catch (error) {
         console.error("API isteği sırasında bir hata oluştu:", error);
@@ -31,7 +31,11 @@ const Header = () => {
     };
 
     fetchData();
-  }, [API_KEY]);
+  }, [dispatch]);
+
+  const movies=useSelector((state)=>state.movies)
+  const randomMovie = movies[Math.floor(Math.random() * movies.length)];
+console.log(movies);
 
 
   return (
@@ -44,20 +48,20 @@ const Header = () => {
             alt=""
           />
           <div className="absolute bottom-0 flex justify-between w-[93%] mb-7 mx-11 ">
-            <Card  bg={bg}/>
+            <CardItem  randomMovie={randomMovie}  />
             <div className="flex flex-col  items-center justify-start">
               <p className="text-white text-2xl">Welcome to the</p>
               <p className="text-white text-2xl font-bold">
                 World of TV Series & Movies
               </p>
             </div>
-            <Card bg={bg} />
+            <CardItem bg={bg} />
           </div>
         </div>
       </header>
 
-<Movies movies={results}/>     
-<Series/>
+      <Movies />
+      <Series />
     </>
   );
 };
