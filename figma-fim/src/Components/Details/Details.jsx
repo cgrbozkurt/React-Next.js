@@ -1,10 +1,16 @@
+import { useParams } from "react-router-dom";
 import VideoPlayer from "./Video";
 
 const Details = () => {
+  const {id}=useParams();
+
+ console.log(id);
+
+
   return (
     <div>
       <h1 className="font-bold flex justify-center text-center mt-14 text-4xl mb-12 ">
-        Five Nights At Freddy&apos;s
+        Five Nights At Freddy&apos;s 
       </h1>
       <VideoPlayer />
       <div className="overview relative flex  mt-12  mx-[100px] h-[555px] ">

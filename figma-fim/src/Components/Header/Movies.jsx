@@ -5,7 +5,6 @@ import CardItem from "../Card/Card"
 const Movies = () => {
 const gg=" bg-blue-950 text-white"
 const movies=useSelector((state)=>state.movies)
-console.log(movies);
   return (
     <div className="w-full  flex  z-10">
          <div className="populer mx-auto  mt-16">
