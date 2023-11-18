@@ -31,7 +31,7 @@ const Details = ({ films }) => {
           {/* ... Diğer içerikler ... */}
         </div>
       </div>
-    </div>
+    </div>  
   );
 };
 
