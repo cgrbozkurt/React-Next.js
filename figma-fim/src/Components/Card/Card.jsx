@@ -1,16 +1,16 @@
-import {Link, useNavigate } from 'react-router-dom';
+import {Link } from 'react-router-dom';
 
 
 /* eslint-disable react/prop-types */
 const CardItem = ({ product,bg,gg }) => {
   // Eğer product değeri undefined ise, varsayılan bir değer atayabiliriz
-  const { title = "No Title", vote_average = 0, poster_path = "" } = product || {};
+  const { title = "No Title", vote_average = 0, poster_path = "" , id="undefined"} = product || {};
   
 
 
   return (
     
-   <Link to={`/details/${id}`}>
+    <Link to={{ pathname: `/details/${id}`, state: { title, vote_average, poster_path, } }}>
     <div   className="card relative">
       {vote_average?(<div id="top" className={`point  w-[42%] ml-auto ${gg} ${bg} rounded-t-md h-8 flex justify-center text-center font-bold `}>
         {vote_average.toFixed(1)}/10
